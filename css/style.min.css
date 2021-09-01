@@ -1342,6 +1342,25 @@ label {
     cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------- */
+
+
+
 .m-btns button{
     width: 50%;
     text-align: center;
@@ -1362,6 +1381,72 @@ label {
     border: 5px solid #00272b;
     color: #00272b;
 }
+
+.nav-link {
+    color: #e7b916!important;
+    text-decoration: none;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(231, 185, 22, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-light .navbar-toggler {
+    color: transparent;
+    border: 0px;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+        JUSTIFY-CONTENT: flex-end;
+    }
+    .navbar {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 35px;
+    }
+}
+@media (max-width: 991px) {
+    .navbar {
+        background: #eef4d4!important;
+    }
+}
+
+
+/*----------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 300px) and (max-width: 640px) {
     #qwMMM .modal-content {
         padding: 10px 20px;
