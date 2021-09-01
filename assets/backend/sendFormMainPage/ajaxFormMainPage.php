@@ -1,7 +1,7 @@
 <?php
 
-define('TELEGRAM_TOKEN', '');                                                               //ID БОТА
-define('TELEGRAM_CHATID', '');                                                              //ID Диалога
+define('TELEGRAM_TOKEN', '1915955279:AAGYgRcfVWdd8KAOso9V0p9Hf-LCW6mmX5E');                                                               //ID БОТА
+define('TELEGRAM_CHATID', '554954543');                                                              //ID Диалога
 define('userfilesLink', '/assets/userfiles/video/');                                        //Директория файлов
 
 function message_to_telegram($text) {
