@@ -30,41 +30,43 @@
 	<header class="header">
     <!-- <img class="header-bg" src="img/header-background.webp" alt="header"> -->
     <img class="arrow" src="img/arrow-down.svg" alt="">
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <div class="nav-logo">
-                    <img src="img/logo.webp" alt="">
-                    Swim Assist
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <div class="nav-logo">
+                        <img src="img/logo.webp" alt="">
+                        Swim Assist
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Для кого</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Процесс</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Цена</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Контакты</a>
+                    </li>
+                </ul>
                 </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="#">О нас</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Для кого</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Услуги</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Процесс</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Цена</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Контакты</a>
-                </li>
-            </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <div class="container">
         <div class="content">
             <div class="inner">
@@ -82,38 +84,35 @@
 	<main class="main">
         <div id="qwM" class="modal">
     <div class="modal-content">
-        <form method="POST" enctype="multipart/form-data" id="sendVideoForm">
+        <form action="#">
             <div class="i-g-1">
                 <label for="name">ФИО:</label>
-                <input class="input" type="text" name="nameVideo" id="nameVideo">
+                <input class="input" type="text" name="name" id="name">
             </div>
             <div class="i-g-2">
                 <div>
                     <label for="phone">Телефон:</label>
-                    <input class="input" type="text" name="phoneVideo" id="phoneVideo">
+                    <input class="input" type="text" name="phone" id="phone">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input class="input" type="text" name="emailVideo" id="emailVideo">
+                    <input class="input" type="text" name="email" id="email">
                 </div>
             </div>
             <div class="i-g-3">
                 <div>
                     <label for="file">Прикрепить видео:</label>
-                    <input class="input" type="file" name="fileVideo" id="fileVideo">
+                    <input class="input" type="file" name="file" id="file">
                 </div>
                 <div>
                     <label for="comment">Комментарий:</label>
-                    <textarea name="commentVideo" id="commentVideo" rows="8"></textarea>
+                    <textarea name="comment" id="comment" rows="8"></textarea>
                 </div>
             </div>
-            <input type="checkbox" id="videoCheckApproval">
-            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <button class="m-btnsSend" id="sendVideoButton" type="submit">Отправить</button>
-                <a class="close" id="closeVideo">Отмена</a>
+                <a href="#">Отправить</a>
+                <a class="close" id="dec">Отмена</a>
             </div>
-            <div id="sendVideoRequest"></div>
         </form>
     </div>
 </div>
@@ -122,88 +121,86 @@
 
 <div id="qwMM" class="modal">
     <div class="modal-content">
-        <form method="POST" id="dealFromUser">
+        <form action="#">
             <div class="wrapper">
                 <div class="from">
                     <div class="i-g-1">
                         <label for="name">ФИО:</label>
-                        <input class="input" type="text" name="usernameDealFrom" id="usernameDealFrom">
+                        <input class="input" type="text" name="nameF" id="nameFrom">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Телефон:</label>
-                        <input class="input" type="text" name="phoneDealFrom" id="phoneDealFrom">
+                        <input class="input" type="text" name="phoneF" id="phoneFrom">
                     </div>
                     <div class="i-g-1">
                         <label for="name">E-mail:</label>
-                        <input class="input" type="text" name="emailDealFrom" id="emailDealFrom">
+                        <input class="input" type="text" name="emailF" id="emailFrom">
                     </div>
                 </div>
                 <div class="to">
                     <div class="i-g-1">
                         <label for="name">ФИО:</label>
-                        <input class="input" type="text" name="usernameDeal" id="usernameDeal">
+                        <input class="input" type="text" name="nameT" id="nameTo">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Телефон:</label>
-                        <input class="input" type="text" name="phoneDeal" id="phoneDeal">
+                        <input class="input" type="text" name="phone" id="phoneTo">
                     </div>
                     <div class="i-g-1">
                         <label for="name">E-mail:</label>
-                        <input class="input" type="text" name="emailDeal" id="emailDeal">
+                        <input class="input" type="text" name="email" id="emailTo">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Комментарий:</label>
-                        <textarea class="input" type="text" rows="8" name="commDeal" id="commDeal"></textarea>
+                        <textarea class="input" type="text" rows="8" name="comm" id="commTo"></textarea>
                     </div>
                 </div>
             </div>
-            <input type="checkbox" id="dealCheckApproval">
-            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
+            <input type="checkbox">
+            <a class="sgl" href="#">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <button class="m-btnsSend" id="sendDealFromUser" type="button">Отправить</button>
-                <a class="close" id="closeDeal">Отмена</a>
+                <a href="#">Отправить</a>
+                <a class="close" id="dec">Отмена</a>
             </div>
-            <div id="dealRequest"></div>   <!-- ТУТ БЛОК ДЛЯ ВОЗВРАТА dealRequest, ошибки и success-->
         </form>
     </div>
 </div>
 
 <div id="qwMMM" class="modal">
     <div class="modal-content">
-        <form method="POST" id="questRequestForm">
+        <form action="#">
             <div class="i-g-1">
                 <label for="name">ФИО:</label>
-                <input class="input" type="text" name="usernameQuest" id="usernameQuest">
+                <input class="input" type="text" name="name" id="name">
             </div>
             <div class="i-g-2">
                 <div>
                     <label for="phone">Телефон:</label>
-                    <input class="input" type="text" name="phoneQuest" id="phoneQuest">
+                    <input class="input" type="text" name="phone" id="phone">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input class="input" type="text" name="emailQuest" id="emailQuest">
+                    <input class="input" type="text" name="email" id="email">
                 </div>
             </div>
             <div class="i-g-1">
                 <label for="comment">Вопрос:</label>
-                <textarea name="commentQuest" id="commentQuest" rows="8"></textarea>
+                <textarea name="comment" id="comment" rows="8"></textarea>
             </div>
-            <input type="checkbox" id="questCheckApproval">
-            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <button class="m-btnsSend" id="sendQuestionFromUser" type="button">Отправить</button>
-                <a class="close" id="closeQuest">Отмена</a>
+                <a href="#">Отправить</a>
+                <a class="close" id="dec">Отмена</a>
             </div>
         </form>
-        <div id="questRequest"></div>         <!-- ТУТ БЛОК ДЛЯ ВОЗВРАТА questRequest, ошибки и success-->
     </div>
 </div>
         <div class="container">
     <div class="who">
-        <h2 class="head dark">Кто мы?</h2>
-        <p class="par dark">Мы – команда опытных тренеров по плаванию.
-            Наша цель – помогать в освоении правильной техники и чувствовать себя свободно в воде.</p>
+        <div class="content">
+            <h2 class="head dark">Кто мы?</h2>
+            <p class="par dark">Мы – команда опытных тренеров по плаванию.
+                Наша цель – помогать в освоении правильной техники и чувствовать себя свободно в воде.</p>
+        </div>
     </div>
 </div>
         <div class="help">
