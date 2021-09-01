@@ -82,35 +82,38 @@
 	<main class="main">
         <div id="qwM" class="modal">
     <div class="modal-content">
-        <form action="#">
+        <form method="POST" enctype="multipart/form-data" id="sendVideoForm">
             <div class="i-g-1">
                 <label for="name">ФИО:</label>
-                <input class="input" type="text" name="name" id="name">
+                <input class="input" type="text" name="nameVideo" id="nameVideo">
             </div>
             <div class="i-g-2">
                 <div>
                     <label for="phone">Телефон:</label>
-                    <input class="input" type="text" name="phone" id="phone">
+                    <input class="input" type="text" name="phoneVideo" id="phoneVideo">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input class="input" type="text" name="email" id="email">
+                    <input class="input" type="text" name="emailVideo" id="emailVideo">
                 </div>
             </div>
             <div class="i-g-3">
                 <div>
                     <label for="file">Прикрепить видео:</label>
-                    <input class="input" type="file" name="file" id="file">
+                    <input class="input" type="file" name="fileVideo" id="fileVideo">
                 </div>
                 <div>
                     <label for="comment">Комментарий:</label>
-                    <textarea name="comment" id="comment" rows="8"></textarea>
+                    <textarea name="commentVideo" id="commentVideo" rows="8"></textarea>
                 </div>
             </div>
+            <input type="checkbox" id="videoCheckApproval">
+            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <a href="#">Отправить</a>
-                <a class="close" id="dec">Отмена</a>
+                <button class="m-btnsSend" id="sendVideoButton" type="submit">Отправить</button>
+                <a class="close" id="closeVideo">Отмена</a>
             </div>
+            <div id="sendVideoRequest"></div>
         </form>
     </div>
 </div>
@@ -119,77 +122,81 @@
 
 <div id="qwMM" class="modal">
     <div class="modal-content">
-        <form action="#">
+        <form method="POST" id="dealFromUser">
             <div class="wrapper">
                 <div class="from">
                     <div class="i-g-1">
                         <label for="name">ФИО:</label>
-                        <input class="input" type="text" name="nameF" id="nameFrom">
+                        <input class="input" type="text" name="usernameDealFrom" id="usernameDealFrom">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Телефон:</label>
-                        <input class="input" type="text" name="phoneF" id="phoneFrom">
+                        <input class="input" type="text" name="phoneDealFrom" id="phoneDealFrom">
                     </div>
                     <div class="i-g-1">
                         <label for="name">E-mail:</label>
-                        <input class="input" type="text" name="emailF" id="emailFrom">
+                        <input class="input" type="text" name="emailDealFrom" id="emailDealFrom">
                     </div>
                 </div>
                 <div class="to">
                     <div class="i-g-1">
                         <label for="name">ФИО:</label>
-                        <input class="input" type="text" name="nameT" id="nameTo">
+                        <input class="input" type="text" name="usernameDeal" id="usernameDeal">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Телефон:</label>
-                        <input class="input" type="text" name="phone" id="phoneTo">
+                        <input class="input" type="text" name="phoneDeal" id="phoneDeal">
                     </div>
                     <div class="i-g-1">
                         <label for="name">E-mail:</label>
-                        <input class="input" type="text" name="email" id="emailTo">
+                        <input class="input" type="text" name="emailDeal" id="emailDeal">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Комментарий:</label>
-                        <textarea class="input" type="text" rows="8" name="comm" id="commTo"></textarea>
+                        <textarea class="input" type="text" rows="8" name="commDeal" id="commDeal"></textarea>
                     </div>
                 </div>
             </div>
-            <input type="checkbox">
-            <a class="sgl" href="#">Согласие на обработку персональных данных</a>
+            <input type="checkbox" id="dealCheckApproval">
+            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <a href="#">Отправить</a>
-                <a class="close" id="dec">Отмена</a>
+                <button class="m-btnsSend" id="sendDealFromUser" type="button">Отправить</button>
+                <a class="close" id="closeDeal">Отмена</a>
             </div>
+            <div id="dealRequest"></div>   <!-- ТУТ БЛОК ДЛЯ ВОЗВРАТА dealRequest, ошибки и success-->
         </form>
     </div>
 </div>
 
 <div id="qwMMM" class="modal">
     <div class="modal-content">
-        <form action="#">
+        <form method="POST" id="questRequestForm">
             <div class="i-g-1">
                 <label for="name">ФИО:</label>
-                <input class="input" type="text" name="name" id="name">
+                <input class="input" type="text" name="usernameQuest" id="usernameQuest">
             </div>
             <div class="i-g-2">
                 <div>
                     <label for="phone">Телефон:</label>
-                    <input class="input" type="text" name="phone" id="phone">
+                    <input class="input" type="text" name="phoneQuest" id="phoneQuest">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input class="input" type="text" name="email" id="email">
+                    <input class="input" type="text" name="emailQuest" id="emailQuest">
                 </div>
             </div>
             <div class="i-g-1">
                 <label for="comment">Вопрос:</label>
-                <textarea name="comment" id="comment" rows="8"></textarea>
+                <textarea name="commentQuest" id="commentQuest" rows="8"></textarea>
             </div>
+            <input type="checkbox" id="questCheckApproval">
+            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <a href="#">Отправить</a>
-                <a class="close" id="dec">Отмена</a>
+                <button class="m-btnsSend" id="sendQuestionFromUser" type="button">Отправить</button>
+                <a class="close" id="closeQuest">Отмена</a>
             </div>
         </form>
+        <div id="questRequest"></div>         <!-- ТУТ БЛОК ДЛЯ ВОЗВРАТА questRequest, ошибки и success-->
     </div>
 </div>
         <div class="container">
