@@ -18,6 +18,7 @@
 	<link rel="shortcut icon"
 				href="img/favicons/favicon.png"
 				type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 	<link rel="stylesheet"
 				href="css/libs.min.css">
 	<link rel="stylesheet"
@@ -27,7 +28,7 @@
 
 
 <body>
-	<header class="header">
+<header class="header">
     <!-- <img class="header-bg" src="img/header-background.webp" alt="header"> -->
     <img class="arrow" src="img/arrow-down.svg" alt="">
     <div class="container">
@@ -58,38 +59,43 @@
     </div>
 </header>
 
+
+
 	<main class="main">
         <div id="qwM" class="modal">
     <div class="modal-content">
-        <form action="#">
+        <form method="POST" enctype="multipart/form-data" id="sendVideoForm">
             <div class="i-g-1">
                 <label for="name">ФИО:</label>
-                <input class="input" type="text" name="name" id="name">
+                <input class="input" type="text" name="nameVideo" id="nameVideo">
             </div>
             <div class="i-g-2">
                 <div>
                     <label for="phone">Телефон:</label>
-                    <input class="input" type="text" name="phone" id="phone">
+                    <input class="input" type="text" name="phoneVideo" id="phoneVideo">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input class="input" type="text" name="email" id="email">
+                    <input class="input" type="text" name="emailVideo" id="emailVideo">
                 </div>
             </div>
             <div class="i-g-3">
                 <div>
                     <label for="file">Прикрепить видео:</label>
-                    <input class="input" type="file" name="file" id="file">
+                    <input class="input" type="file" name="fileVideo" id="fileVideo">
                 </div>
                 <div>
                     <label for="comment">Комментарий:</label>
-                    <textarea name="comment" id="comment" rows="8"></textarea>
+                    <textarea name="commentVideo" id="commentVideo" rows="8"></textarea>
                 </div>
             </div>
+            <input type="checkbox" id="videoCheckApproval">
+            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <a href="#">Отправить</a>
-                <a class="close" id="dec">Отмена</a>
+                <button class="m-btnsSend" id="sendVideoButton" type="submit">Отправить</button>
+                <a class="close" id="closeVideo">Отмена</a>
             </div>
+            <div id="sendVideoRequest"></div>
         </form>
     </div>
 </div>
@@ -98,87 +104,91 @@
 
 <div id="qwMM" class="modal">
     <div class="modal-content">
-        <form action="#">
+        <form method="POST" id="dealFromUser">
             <div class="wrapper">
                 <div class="from">
                     <div class="i-g-1">
                         <label for="name">ФИО:</label>
-                        <input class="input" type="text" name="nameF" id="nameFrom">
+                        <input class="input" type="text" name="usernameDealFrom" id="usernameDealFrom">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Телефон:</label>
-                        <input class="input" type="text" name="phoneF" id="phoneFrom">
+                        <input class="input" type="text" name="phoneDealFrom" id="phoneDealFrom">
                     </div>
                     <div class="i-g-1">
                         <label for="name">E-mail:</label>
-                        <input class="input" type="text" name="emailF" id="emailFrom">
+                        <input class="input" type="text" name="emailDealFrom" id="emailDealFrom">
                     </div>
                 </div>
                 <div class="to">
                     <div class="i-g-1">
                         <label for="name">ФИО:</label>
-                        <input class="input" type="text" name="nameT" id="nameTo">
+                        <input class="input" type="text" name="usernameDeal" id="usernameDeal">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Телефон:</label>
-                        <input class="input" type="text" name="phone" id="phoneTo">
+                        <input class="input" type="text" name="phoneDeal" id="phoneDeal">
                     </div>
                     <div class="i-g-1">
                         <label for="name">E-mail:</label>
-                        <input class="input" type="text" name="email" id="emailTo">
+                        <input class="input" type="text" name="emailDeal" id="emailDeal">
                     </div>
                     <div class="i-g-1">
                         <label for="name">Комментарий:</label>
-                        <textarea class="input" type="text" rows="8" name="comm" id="commTo"></textarea>
+                        <textarea class="input" type="text" rows="8" name="commDeal" id="commDeal"></textarea>
                     </div>
                 </div>
             </div>
-            <input type="checkbox">
-            <a class="sgl" href="#">Согласие на обработку персональных данных</a>
+            <input type="checkbox" id="dealCheckApproval">
+            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <a href="#">Отправить</a>
-                <a class="close" id="dec">Отмена</a>
+                <button class="m-btnsSend" id="sendDealFromUser" type="button">Отправить</button>
+                <a class="close" id="closeDeal">Отмена</a>
             </div>
+            <div id="dealRequest"></div>   <!-- ТУТ БЛОК ДЛЯ ВОЗВРАТА dealRequest, ошибки и success-->
         </form>
     </div>
 </div>
 
 <div id="qwMMM" class="modal">
     <div class="modal-content">
-        <form action="#">
+        <form method="POST" id="questRequestForm">
             <div class="i-g-1">
                 <label for="name">ФИО:</label>
-                <input class="input" type="text" name="name" id="name">
+                <input class="input" type="text" name="usernameQuest" id="usernameQuest">
             </div>
             <div class="i-g-2">
                 <div>
                     <label for="phone">Телефон:</label>
-                    <input class="input" type="text" name="phone" id="phone">
+                    <input class="input" type="text" name="phoneQuest" id="phoneQuest">
                 </div>
                 <div>
                     <label for="email">E-mail:</label>
-                    <input class="input" type="text" name="email" id="email">
+                    <input class="input" type="text" name="emailQuest" id="emailQuest">
                 </div>
             </div>
             <div class="i-g-1">
                 <label for="comment">Вопрос:</label>
-                <textarea name="comment" id="comment" rows="8"></textarea>
+                <textarea name="commentQuest" id="commentQuest" rows="8"></textarea>
             </div>
+            <input type="checkbox" id="questCheckApproval">
+            <a href="assets/docs/policy.docx">Согласие на обработку персональных данных</a>
             <div class="m-btns">
-                <a href="#">Отправить</a>
-                <a class="close" id="dec">Отмена</a>
+                <button class="m-btnsSend" id="sendQuestionFromUser" type="button">Отправить</button>
+                <a class="close" id="closeQuest">Отмена</a>
             </div>
         </form>
+        <div id="questRequest"></div>         <!-- ТУТ БЛОК ДЛЯ ВОЗВРАТА questRequest, ошибки и success-->
     </div>
 </div>
-        <div class="container">
+<div class="container">
     <div class="who">
         <h2 class="head dark">Кто мы?</h2>
         <p class="par dark">Мы – команда опытных тренеров по плаванию.
             Наша цель – помогать в освоении правильной техники и чувствовать себя свободно в воде.</p>
     </div>
 </div>
-        <div class="help">
+<div class="help">
     <!-- <img class="banner" src="img/help-banner.webp" alt=""> -->
     <div class="container">
         <div class="content">
@@ -191,7 +201,7 @@
         </div>
     </div>
 </div>
-        <div class="container">
+<div class="container">
     <div class="what">
         <h2 class="head dark">Что вы получаете?</h2>
         <div class="list par dark">
@@ -210,7 +220,7 @@
         </div>
     </div>
 </div>
-        <div class="container">
+<div class="container">
     <div class="how">
         <h2 class="head dark">Как мы работаем?</h2>
         <div class="content">
@@ -224,7 +234,7 @@
         <a id="qw">Отправить видео</a>
     </div>
 </div>
-        <div class="price">
+<div class="price">
     <!-- <img class="banner" src="img/price-banner.webp" alt=""> -->
     <div class="container">
         <div class="content">
@@ -238,7 +248,7 @@
         </div>
     </div>
 </div>
-        <div class="gift">
+<div class="gift">
     <h2 class="head dark">Подарочный сертификат</h2>
     <p class="par dark">Если кто-то из вашего окружения любит плавание, поддержите его и подарите сертификат на наш разбор.
         Правильная техника даёт намного больше положительных эмоций от плавания. Теперь вы можете буквально подарить эти эмоции своим друзьям, коллегам и близким!</p>
@@ -247,7 +257,7 @@
         <a id="qww">Оставить заявку</a>
     </div>
 </div>
-    </main>
+</main>
 	<footer class="footer">
     <!-- <img class="banner" src="img/footer-banner.webp" alt=""> -->
     <div class="container">
@@ -273,7 +283,9 @@
 </footer>
 
 	<script src="js/libs.min.js"></script>
-<script src="js/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="js/main.min.js"></script>
 
 </body>
 
